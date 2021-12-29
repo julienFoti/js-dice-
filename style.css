@@ -1,0 +1,199 @@
+#show {width: 100%;
+height: 100%;}
+.confetti {
+width: 15px;
+height: 15px;
+background-color: #f2d74e;
+position: absolute;
+left: 50%;
+animation: confetti 5s ease-in-out -2s infinite;
+transform-origin: left top;
+}
+.confetti:nth-child(1) {
+background-color: #f2d74e; left: 10%; animation-delay: 0;
+}
+.confetti:nth-child(2) {
+background-color: #95c3de; left: 20%; animation-delay: -5s;
+}
+.confetti:nth-child(3) {
+background-color: #ff9a91; left: 30%; animation-delay: -3s;
+}
+.confetti:nth-child(4) {
+background-color: #f2d74e; left: 40%; animation-delay: -2.5s;
+}
+.confetti:nth-child(5) {
+background-color: #95c3de; left: 50%; animation-delay: -4s;
+}
+.confetti:nth-child(6) {
+background-color: #ff9a91; left: 60%; animation-delay: -6s;
+}
+.confetti:nth-child(7) {
+background-color: #f2d74e; left: 70%; animation-delay: -1.5s;
+}
+.confetti:nth-child(8) {
+background-color: #95c3de; left: 80%; animation-delay: -2s;
+}
+.confetti:nth-child(9) {
+background-color: #ff9a91; left: 90%; animation-delay: -3.5s;
+}
+.confetti:nth-child(10) {
+background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
+}
+.confetti:nth-child(11) {
+  background-color: #f2d74e; left: 10%; animation-delay: 0;
+  }
+  .confetti:nth-child(12) {
+  background-color: #95c3de; left: 20%; animation-delay: -5s;
+  }
+  .confetti:nth-child(13) {
+  background-color: #ff9a91; left: 30%; animation-delay: -3s;
+  }
+  .confetti:nth-child(14) {
+  background-color: #f2d74e; left: 40%; animation-delay: -2.5s;
+  }
+  .confetti:nth-child(15) {
+  background-color: #95c3de; left: 50%; animation-delay: -4s;
+  }
+  .confetti:nth-child(16) {
+  background-color: #ff9a91; left: 60%; animation-delay: -6s;
+  }
+  .confetti:nth-child(17) {
+  background-color: #f2d74e; left: 70%; animation-delay: -1.5s;
+  }
+  .confetti:nth-child(18) {
+  background-color: #95c3de; left: 80%; animation-delay: -2s;
+  }
+  .confetti:nth-child(19) {
+  background-color: #ff9a91; left: 90%; animation-delay: -3.5s;
+  }
+  .confetti:nth-child(20) {
+  background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
+  }
+@keyframes confetti {
+0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+}
+
+
+body{
+  height: 100vh
+	font-family : 'Lato', sans-serif ;
+  font-size: 2rem;
+  background-color:#CFD8DC ;
+  padding:20px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #555
+}
+
+  h1{
+    color: #d69d66;
+  }
+  h3{
+    text-align: center;
+    color: #d69d66;
+    font-size: 1rem;
+  }
+  .btn{
+    background:#BCAAA4;
+    padding: 20px;
+    margin: 20px;
+  }
+.container{
+  box-shadow: 10px 5px 5px #BCAAA4;
+   background-color: #d69d66;
+  border-radius: 25px;
+  margin-top: 5rem;
+  padding: 5rem;
+  ;
+
+}
+ .card{
+  box-shadow: 10px 5px 5px #3E2723;
+
+ }
+  .dice {
+    height:12rem ;
+     vertical-align: middle;
+    margin:20px
+    padding-bottom: 20px;
+    ;
+}
+
+.global{
+  padding: 15px;
+}
+
+.name {
+  position: relative;
+  font-weight: bold;
+  font-size: 38px;
+  text-align: center;
+}
+
+.tscore {
+  background-color:#555
+  border-radius: 9px;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.score {
+  font-size: 38px;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-bottom: auto;
+ 
+}
+
+.player--active {
+  background-color: #555
+  ;
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px #3E2723;
+}
+
+  .player--active .current {
+      opacity: 0.2;
+      
+  }
+    .panel{
+      padding:15px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.75s;
+      font-size: 2rem;
+      border-bottom-left-radius: 25px;
+    }
+  .current{
+     
+      padding:15px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.75s;
+      font-size: 2rem;
+      border-bottom-left-radius: 25px;
+  }
+ .player--winner .name{
+    color: #ff5e57;
+  }
+  .player--winner {
+    background-color: #ff5e57;
+    
+}
+ 
+
+  
+.hidden {
+    display: none;
+}
+
+
+
+img{
+  height: 15rem;
+  vertical-align: middle;
+}
+
