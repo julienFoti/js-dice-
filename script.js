@@ -1,16 +1,16 @@
 // Déclaration des constantes/variables
-const player0El = document.querySelector('.player--0');
-const player1El = document.querySelector('.player--1');
+const joueur0El = document.querySelector('.joueur--0');
+const joueur1El = document.querySelector('.joueur--1');
 const score0El = document.querySelector('#score--0');
 const score1El = document.getElementById('score--1');
-const current0El = document.getElementById('current--0');
-const current1El = document.getElementById('current--1');
+const round0El = document.getElementById('round--0');
+const round1El = document.getElementById('round--1');
 const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
  
-let scores, currentScore, activePlayer,playing;
+let scores, roundScore, activejoueur,playing;
 
 // cacher les confettis
 document.getElementById("show").hidden=true;
@@ -32,99 +32,88 @@ document.querySelectorAll('img')[1].setAttribute
  if (diceRandomNum !== 1) {
       
     // si oui ajout au score courrant
-    currentScore += diceRandomNum;
+    roundScore += diceRandomNum;
     document.getElementById(
-      `current--${activePlayer}`
-    ).textContent = currentScore;
+      `round--${activejoueur}`
+    ).textContent = roundScore;
   } else {
     
     // si non fin du tour , joueur suivant
-    switchPlayer();
+    switchjoueur();
   }
     }
 })
 // changement de joueur
-const switchPlayer = function () {
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    currentScore = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    player0El.classList.toggle('player--active');
-    player1El.classList.toggle('player--active');
+const switchjoueur = function () {
+    document.getElementById(`round--${activejoueur}`).textContent = 0;
+    roundScore = 0;
+    activejoueur = activejoueur === 0 ? 1 : 0;
+    joueur0El.classList.toggle('joueur--active');
+    joueur1El.classList.toggle('joueur--active');
     };
     // click bouton sauve si score courrant différent de 0
     btnHold.addEventListener('click', function (event) {
-      if (currentScore !== 0) {
+      if (roundScore !== 0) {
         event.preventDefault();
       if (playing)
         
         {
          
             
-            // 1. Ajout score courrant au socre global
-            scores[activePlayer] += currentScore;
-            // scores[1] = scores[1] + currentScore
+//Ajout score courrant au socre global
+    scores[activejoueur] += roundScore;
+    // scores[1] = scores[1] + roundScore
         
-            document.getElementById(`score--${activePlayer}`)
-            .textContent = scores[activePlayer];
+    document.getElementById(`score--${activejoueur}`)
+    .textContent = scores[activejoueur];
         
-            // Verrification si score egal 100 
-            if (scores[activePlayer] >= 100)
+     // Verrification si score egal 100 
+        if (scores[activejoueur] >= 100)
              {
-               
-            
-            // Fin de partie
-            playing = false;
+         // Fin de partie
+            playing = false;   
+             document.getElementById("show").hidden=false;
             diceEl.classList.add('hidden');
-            document.querySelector('#name--' + activePlayer).textContent = 'gagné!';
-            document.querySelector('#name--' + activePlayer).style.color="#ff5e57";
+            document.querySelector('#nom--' + activejoueur).textContent = 'gagné!';
+            document.querySelector('#nom--' + activejoueur).style.color="#ff5e57";  
+            document.querySelector(`.joueur--${activejoueur}`).classList.add('joueur--winner');
+            document.querySelector(`.joueur--${activejoueur}`).classList.add('joueur--winner.nom');
+            document.querySelector(`.joueur--${activejoueur}`).classList.remove('joueur--active');
+            document.querySelector(`.joueur--${activejoueur}`)
+               } 
+        else {
             
-                   document.getElementById("show").hidden=false;
-              
-            document
-                .querySelector(`.player--${activePlayer}`)
-                
-                .classList.add('player--winner');
-                document
-                .querySelector(`.player--${activePlayer}`)
-                .classList.add('player--winner .name');
-            document
-                .querySelector(`.player--${activePlayer}`)
-                .classList.remove('player--active');
-                document
-                .querySelector(`.player--${activePlayer}`)
-              
-               
-            } else {
-            
-            // Sinon passe au joeur suivant
-            switchPlayer();
+        // Sinon passe au joeur suivant
+            switchjoueur();
             }
           }
         }
         });
+        
         // Conditions début de partie
 
 
-    const init = function () {
-    scores = [0, 0];
-    currentScore = 0;
-    activePlayer = 0;
-    playing = true;
-    
-    score0El.textContent = 0;
-    score1El.textContent = 0;
-    current0El.textContent = 0;
-    current1El.textContent = 0;
-    
-    
-    player0El.classList.remove('player--winner');
-    player1El.classList.remove('player--winner');
-    player0El.classList.add('player--active');
-    player1El.classList.remove('player--active');
-    };
-    init();
-    //Nouvelle partie
-    btnNew.addEventListener('click', init);
+            const init = function () {
+            scores = [0, 0];
+            roundScore = 0;
+            activejoueur = 0;
+            playing = true;
+            
+            score0El.textContent = 0;
+            score1El.textContent = 0;
+            round0El.textContent = 0;
+            round1El.textContent = 0;
+            
+            
+            joueur0El.classList.remove('joueur--winner');
+            joueur1El.classList.remove('joueur--winner');
+            joueur0El.classList.add('joueur--active');
+            joueur1El.classList.remove('joueur--active');
+            };
+            init();
+
+        //Nouvelle partie
+            btnNew.addEventListener('click', init);
 
 
 
