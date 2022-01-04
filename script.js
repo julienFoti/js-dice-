@@ -98,12 +98,12 @@ const switchjoueur = function () {
             roundScore = 0;
             activejoueur = 0;
             playing = true;
-            
+            diceEl.classList.remove('hidden');
             score0El.textContent = 0;
             score1El.textContent = 0;
             round0El.textContent = 0;
             round1El.textContent = 0;
-            
+            document.getElementById("show").hidden=true;
             
             joueur0El.classList.remove('joueur--winner');
             joueur1El.classList.remove('joueur--winner');
