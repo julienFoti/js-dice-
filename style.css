@@ -80,13 +80,13 @@
     
     
     body{
-      height: 100vh
-        font-family : 'Lato', sans-serif ;
+      height: 70vh
+      font-family : 'Lato', sans-serif ;
       font-size: 2rem;
       background-color:#CFD8DC ;
       padding:20px;
       text-align: center;
-      text-shadow: 1px 1px 2px #555
+      text-shadow: 1px 1px 2px #555;
     }
     
       h1{
@@ -98,16 +98,17 @@
         font-size: 1rem;
       }
       .btn{
-        background:#BCAAA4;
+        background:#CFD8DC;
         padding: 20px;
         margin: 20px;
+        font-size: 2rem;
       }
     .container{
       box-shadow: 10px 5px 5px #BCAAA4;
        background-color: #d69d66;
       border-radius: 25px;
-      margin-top: 5rem;
-      padding: 5rem;
+      
+      padding: 20px;
       ;
     
     }
@@ -119,7 +120,7 @@
         height:12rem ;
          vertical-align: middle;
         margin:20px;
-        padding-bottom: 20px;
+      
         
     }
     
@@ -160,20 +161,20 @@
           opacity: 0.2;
           
       }
-        .panel{
+       /* .panel{
           padding:15px;
           width: 100%;
           text-align: center;
-          transition: all 0.75s;
+       
           font-size: 2rem;
-          border-bottom-left-radius: 25px;
+          border-bottom-left-radius: 25px;*/
         }
       .round{
          
           padding:15px;
           width: 100%;
           text-align: center;
-          transition: all 0.75s;
+     
           font-size: 2rem;
           border-bottom-left-radius: 25px;
       }
@@ -194,8 +195,8 @@
     
     
     img{
-      height: 15rem;
+      height:200px;
       vertical-align: middle;
     }
-  
-      
+    
+    
